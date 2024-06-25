@@ -1,4 +1,6 @@
 from django.urls import path, include
+
+from .views import ValuableUploadView
 from .views import ValuableList, ValuableDetail, UserList, UserDetail
 
 urlpatterns = [
@@ -6,5 +8,6 @@ urlpatterns = [
     path('valuables/<int:pk>/', ValuableDetail.as_view()),
     path('users/', UserList.as_view()),
     path('users/<int:pk>/', UserDetail.as_view()),
+    path('upload/', ValuableUploadView.as_view()),
     path('api-auth/', include('rest_framework.urls'))
 ]
